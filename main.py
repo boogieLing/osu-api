@@ -1,4 +1,5 @@
 import os
+import random
 from typing import Dict
 
 import uvicorn
@@ -10,25 +11,37 @@ from utils import show_folder_files, show_beatmap
 app = FastAPI()
 
 
-@app.get("/random_beatMap")
-async def random_beatMap():
-    pass
+@app.get("/random_beatmap")
+async def random_beatmap():
+    total_folder = show_folder_files(DOWNLOAD_RES_PATH)
+    random_index = random.randint(0, len(total_folder) - 1)
 
+    random_result = show_beatmap(total_folder[random_index])
+    return {
+        "name": total_folder[random_index],
+        "data": random_result
+    }
 
-@app.get("/beatMap_list")
-async def beatMap_list():
+@app.get("/beatmap_list")
+async def beatmap_list():
     return show_folder_files(DOWNLOAD_RES_PATH)
 
 
-@app.get("/beatMap/{name}")
-async def beatMap(name: str):
+@app.get("/beatmap/{name}")
+async def beatmap(name: str):
     return show_beatmap(name)
 
 
-@app.get("/img/{name}")
-async def img(name: str):
-    file_like = open(os.path.join(DOWNLOAD_RES_PATH, name), mode="rb")
-    return StreamingResponse(file_like, media_type="image/jpg")
+@app.get("/image/{folder}/{image_name}")
+async def image(folder: str, image_name: str):
+    file_stream = open(os.path.join(DOWNLOAD_RES_PATH, folder, image_name), mode="rb")
+    return StreamingResponse(file_stream, media_type="image")
+
+
+@app.get("/music/{folder}/{music_name}")
+async def music(folder: str, music_name: str):
+    file_stream = open(os.path.join(DOWNLOAD_RES_PATH, folder, music_name), mode="rb")
+    return StreamingResponse(file_stream, media_type="music")
 
 
 if __name__ == '__main__':

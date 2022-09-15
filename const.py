@@ -7,3 +7,5 @@ import os
 
 DOWNLOAD_RES_PATH = "download"
 PROJECT_PATH = os.curdir
+IMAGE_TYPE = (".jpg", ".png", ".bmp")
+MUSIC_TYPE = (".wav", ".mp3", ".flac", ".ape", ".wv")

@@ -6,7 +6,7 @@
 import os
 from fastapi.responses import StreamingResponse
 
-from const import PROJECT_PATH, DOWNLOAD_RES_PATH
+from const import PROJECT_PATH, DOWNLOAD_RES_PATH, IMAGE_TYPE, MUSIC_TYPE
 
 
 def show_folder_files(base_path, all_files=None, recursion=False):
@@ -48,9 +48,10 @@ def show_beatmap(name):
     if os.path.isdir(target_folder):
         file_list = os.listdir(target_folder)
         for file in file_list:
-            if file.title().lower().endswith((".jpg", ".png", ".bmp")):
-
-                res["images"].append(os.path.join(name, file))
-            if file.title().lower().endswith((".wav", ".mp3", ".flac", ".ape", ".wv")):
-                res["songs"].append(os.path.join(name, file))
+            if file.title().lower().endswith(IMAGE_TYPE):
+                res["images"].append(file)
+            if file.title().lower().endswith(MUSIC_TYPE):
+                res["songs"].append(file)
     return res
+
+

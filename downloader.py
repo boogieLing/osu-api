@@ -12,6 +12,8 @@ from loguru import logger
 from InquirerPy import prompt
 from typing import Dict
 
+from const import IMAGE_TYPE, MUSIC_TYPE
+
 DOWNLOAD_PATH = os.curdir
 # Windows
 if sys.platform.startswith("win32"):
@@ -129,16 +131,20 @@ def unzip_beatmapset_file(origin_file, target_dir):
     zip_list = zip_file.namelist()  # 压缩文件清单，可以直接看到压缩包内的各个文件的明细
     for f in zip_list:
         title = f.title().replace(" ", "_")
-        if title.lower().endswith((".jpg", ".png", ".bmp")):
+        if title.lower().endswith(IMAGE_TYPE):
             zip_file.extract(f, target_dir)
+            origin_pic_file = target_dir + "/" + f.title()
             pic_file = target_dir + "/" + title
+            os.rename(origin_pic_file, pic_file)
             kbSize = os.path.getsize(pic_file) / 1024
             if kbSize < 300.0:
                 # 小于300kb的图片无用
                 os.remove(pic_file)
-        if title.lower().endswith((".wav", ".mp3", ".flac", ".ape", ".wv")):
+        if title.lower().endswith(MUSIC_TYPE):
             zip_file.extract(f, target_dir)
+            origin_music_file = target_dir + "/" + f.title()
             music_file = target_dir + "/" + title
+            os.rename(origin_music_file, music_file)
             mbSize = os.path.getsize(music_file) / 1024 / 1024
             if mbSize < 1.0:
                 # 小于1MB的音频无用
@@ -240,7 +246,8 @@ class Downloader:
     def remove_existing_beatmapsets(self):
         filtered_set = set()
         for beatmapset in self.beatmapsets:
-            dir_path = os.path.join(DOWNLOAD_PATH + "/download", str(beatmapset))
+            name = str(beatmapset).replace(" ", "_")
+            dir_path = os.path.join(DOWNLOAD_PATH + "/download", name)
             file_path = dir_path + ".zip"
             if os.path.isdir(dir_path) or os.path.isfile(file_path):
                 logger.error(f"BeatMapSet already downloaded: {beatmapset}")
