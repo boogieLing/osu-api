@@ -1,2 +1,4 @@
 download
 .idea
+venv
+__pycache__

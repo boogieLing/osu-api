@@ -128,16 +128,17 @@ def unzip_beatmapset_file(origin_file, target_dir):
     zip_file = zipfile.ZipFile(origin_file)
     zip_list = zip_file.namelist()  # 压缩文件清单，可以直接看到压缩包内的各个文件的明细
     for f in zip_list:
-        if f.title().lower().endswith((".jpg", ".png", ".bmp")):
+        title = f.title().replace(" ", "_")
+        if title.lower().endswith((".jpg", ".png", ".bmp")):
             zip_file.extract(f, target_dir)
-            pic_file = target_dir + "/" + f.title()
+            pic_file = target_dir + "/" + title
             kbSize = os.path.getsize(pic_file) / 1024
             if kbSize < 300.0:
                 # 小于300kb的图片无用
                 os.remove(pic_file)
-        if f.title().lower().endswith((".wav", ".mp3", ".flac", ".ape", ".wv")):
+        if title.lower().endswith((".wav", ".mp3", ".flac", ".ape", ".wv")):
             zip_file.extract(f, target_dir)
-            music_file = target_dir + "/" + f.title()
+            music_file = target_dir + "/" + title
             mbSize = os.path.getsize(music_file) / 1024 / 1024
             if mbSize < 1.0:
                 # 小于1MB的音频无用
