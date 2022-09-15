@@ -6,11 +6,11 @@ import re
 import sys
 import time
 import zipfile
-import librosa
-import requests
-from loguru import logger
-from InquirerPy import prompt
 from typing import Dict
+
+import requests
+from InquirerPy import prompt
+from loguru import logger
 
 from const import IMAGE_TYPE, MUSIC_TYPE
 
