@@ -4,3 +4,69 @@
 2022-09-16 16:23:16.154 | INFO     | uvicorn.lifespan.on:shutdown:66 - Waiting for application shutdown.
 2022-09-16 16:23:16.154 | INFO     | uvicorn.lifespan.on:shutdown:77 - Application shutdown complete.
 2022-09-16 16:23:16.155 | INFO     | uvicorn.server:serve:85 - Finished server process [31220]
+2022-09-16 19:43:30.455 | DEBUG    | __main__:startup_event:37 - 日志系统已加载
+2022-09-16 19:43:30.457 | INFO     | uvicorn.lifespan.on:startup:61 - Application startup complete.
+2022-09-16 19:43:30.458 | INFO     | uvicorn.server:_log_started_message:207 - Uvicorn running on http://127.0.0.1:11312 (Press CTRL+C to quit)
+2022-09-16 19:43:41.719 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:49962 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:43:53.279 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:49973 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:43:53.283 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:49974 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:44:42.014 | INFO     | uvicorn.server:shutdown:253 - Shutting down
+2022-09-16 19:44:42.115 | INFO     | uvicorn.lifespan.on:shutdown:66 - Waiting for application shutdown.
+2022-09-16 19:44:42.115 | INFO     | uvicorn.lifespan.on:shutdown:77 - Application shutdown complete.
+2022-09-16 19:44:42.115 | INFO     | uvicorn.server:serve:85 - Finished server process [22956]
+2022-09-16 19:44:42.796 | DEBUG    | __main__:startup_event:47 - 日志系统已加载
+2022-09-16 19:44:42.800 | INFO     | uvicorn.lifespan.on:startup:61 - Application startup complete.
+2022-09-16 19:44:42.802 | INFO     | uvicorn.server:_log_started_message:207 - Uvicorn running on http://127.0.0.1:11312 (Press CTRL+C to quit)
+2022-09-16 19:44:49.229 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:50120 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:44:49.231 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:50121 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:45:04.439 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:51640 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:45:22.805 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:51642 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:45:25.599 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:51642 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:45:45.364 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64311 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:46:01.942 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64334 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:46:01.953 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64334 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:46:07.786 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64343 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:46:11.070 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64343 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:46:11.074 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64343 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:46:12.520 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64343 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:46:12.523 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64343 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:46:29.082 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64360 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:46:30.957 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64360 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:46:30.960 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64363 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:47:02.132 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64406 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:47:30.935 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64421 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:49:32.652 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64507 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:49:32.655 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64508 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:49:37.749 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64513 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:49:37.752 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64514 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:49:39.687 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64513 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:49:39.689 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64514 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:52:41.950 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64656 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:55:02.494 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64835 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:55:02.498 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64835 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:55:30.424 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64851 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:55:30.435 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:64852 - "GET / HTTP/1.1" 404
+2022-09-16 19:57:47.412 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:65395 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:57:47.421 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:65396 - "GET /33651-Hatsune_Miku-Rubik%27s_Cube/ HTTP/1.1" 404
+2022-09-16 19:58:08.887 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:65458 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:58:08.891 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:65459 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:58:08.927 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:65461 - "GET /721804-Omoi-Teo/BG.jpg HTTP/1.1" 404
+2022-09-16 19:58:43.000 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:65481 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 19:58:43.009 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:65482 - "GET /1541648-Poppin%27Party-Koko_kara_Saki_wa_Uta_ni_Naranai_%28TV_Size%29/bg.jpg HTTP/1.1" 404
+2022-09-16 20:00:03.632 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:56840 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 20:00:03.639 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:56840 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 20:00:03.684 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:56841 - "GET /image/962088-MIMI_feat._Hatsune_Miku-Marshmary/marshmary.jpg HTTP/1.1" 200
+2022-09-16 20:01:49.440 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:56992 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 20:01:49.447 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:56993 - "GET /image/36858-Hatsune_Miku-Senbonzakura_%28Short_Ver.%29/BG.jpg HTTP/1.1" 200
+2022-09-16 20:01:57.093 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:56996 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 20:01:57.095 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:56997 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 20:01:57.133 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:56998 - "GET /image/1541648-Poppin%27Party-Koko_kara_Saki_wa_Uta_ni_Naranai_%28TV_Size%29/bg.jpg HTTP/1.1" 200
+2022-09-16 20:02:00.918 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:56997 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 20:02:00.925 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:56997 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 20:02:00.981 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:56998 - "GET /image/1411613-ALTIMA-Fight_4_Real_%28TV_Size%29/bg.jpg HTTP/1.1" 200
+2022-09-16 20:02:42.479 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:57076 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 20:02:42.481 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:57077 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 20:02:42.504 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:57079 - "GET /image/36858-Hatsune_Miku-Senbonzakura_%28Short_Ver.%29/BG.jpg HTTP/1.1" 200
+2022-09-16 20:02:45.167 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:57077 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 20:02:45.170 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:57076 - "GET /random_beatmap HTTP/1.1" 200
+2022-09-16 20:02:45.207 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:57079 - "GET /image/1411613-ALTIMA-Fight_4_Real_%28TV_Size%29/bg.jpg HTTP/1.1" 200

@@ -11,6 +11,7 @@ from constom_log import InterceptHandler, format_record
 from utils import show_folder_files, show_beatmap
 import logging
 from loguru import logger
+from fastapi.middleware.cors import CORSMiddleware
 
 
 def init_app():
@@ -20,6 +21,15 @@ def init_app():
 
 
 app = init_app()
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.on_event("startup")
