@@ -133,7 +133,7 @@ def unzip_beatmapset_file(origin_file, target_dir):
         title = f.replace(" ", "_")
         if title.lower().endswith(IMAGE_TYPE):
             zip_file.extract(f, target_dir)
-            origin_pic_file = target_dir + "/" + f.title()
+            origin_pic_file = target_dir + "/" + f
             pic_file = target_dir + "/" + title
             os.rename(origin_pic_file, pic_file)
             kbSize = os.path.getsize(pic_file) / 1024
@@ -144,7 +144,6 @@ def unzip_beatmapset_file(origin_file, target_dir):
             zip_file.extract(f, target_dir)
             origin_music_file = target_dir + "/" + f
             music_file = target_dir + "/" + title
-            print(origin_music_file, music_file)
             os.rename(origin_music_file, music_file)
             mbSize = os.path.getsize(music_file) / 1024 / 1024
             if mbSize < 1.0:
