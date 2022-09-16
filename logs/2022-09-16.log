@@ -1,2 +1,6 @@
 2022-09-16 15:17:33.751 | INFO     | uvicorn.server:_log_started_message:207 - Uvicorn running on http://127.0.0.1:11312 (Press CTRL+C to quit)
 2022-09-16 15:17:51.655 | INFO     | uvicorn.protocols.http.h11_impl:send:477 - 127.0.0.1:53171 - "GET /beatmap_list HTTP/1.1" 200
+2022-09-16 16:23:16.044 | INFO     | uvicorn.server:shutdown:253 - Shutting down
+2022-09-16 16:23:16.154 | INFO     | uvicorn.lifespan.on:shutdown:66 - Waiting for application shutdown.
+2022-09-16 16:23:16.154 | INFO     | uvicorn.lifespan.on:shutdown:77 - Application shutdown complete.
+2022-09-16 16:23:16.155 | INFO     | uvicorn.server:serve:85 - Finished server process [31220]

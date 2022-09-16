@@ -3,6 +3,7 @@ import base64
 import json
 import os
 import re
+import shutil
 import sys
 import time
 import zipfile
@@ -138,10 +139,12 @@ def unzip_beatmapset_file(origin_file, target_dir):
             try:
                 os.rename(origin_item, rename_item)
             except Exception:
-                logger.error("--rename--")
-                logger.error(origin_item, rename_item)
-                logger.error("==rename==")
-                continue
+                logger.error("--remove--")
+                os.remove(origin_item)
+                shutil.rmtree(target_dir)
+                logger.error(f"{origin_item}\n{rename_item}\n{target_dir}")
+                logger.error("==remove==")
+                break
             if title.lower().endswith(IMAGE_TYPE):
                 kbSize = os.path.getsize(rename_item) / 1024
                 if kbSize < 300.0:

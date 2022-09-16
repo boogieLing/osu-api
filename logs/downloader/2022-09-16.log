@@ -153,3 +153,291 @@
 2022-09-16 16:02:12 | SUCCESS  | Unzip ./download\110872-Suzuki_Konomi_n'_Kiba_of_Akiba-Watashi_ga_Motenai_no_wa_Dou_Kangaete_mo_Omaera_ga_Warui!.zip successful
 2022-09-16 16:02:12 | SUCCESS  | Delete ./download\110872-Suzuki_Konomi_n'_Kiba_of_Akiba-Watashi_ga_Motenai_no_wa_Dou_Kangaete_mo_Omaera_ga_Warui!.zip successful
 2022-09-16 16:02:14 | INFO     | Downloading beatmapset: 1178152-ARIANNE-KOMM, SUESSER TOD (M-10 Director's Edit Version)
+2022-09-16 16:25:26 | INFO     | ############### DOWNLOADER STARTED ###############
+2022-09-16 16:25:27 | SUCCESS  | Login successfully
+2022-09-16 16:25:27 | INFO     | Scraping beatmapsets
+2022-09-16 16:25:28 | SUCCESS  | Scraped 15 beatmapsets
+2022-09-16 16:25:28 | INFO     | Downloading beatmapset: 33651-Hatsune Miku-Rubik's Cube
+2022-09-16 16:25:32 | SUCCESS  | 33651-Hatsune Miku-Rubik's Cube - 200 - Download successful
+2022-09-16 16:25:32 | INFO     | Writing file: ./download\33651-Hatsune_Miku-Rubik's_Cube.zip
+2022-09-16 16:25:32 | SUCCESS  | File write successful
+2022-09-16 16:25:32 | SUCCESS  | Unzip ./download\33651-Hatsune_Miku-Rubik's_Cube.zip successful
+2022-09-16 16:25:32 | SUCCESS  | Delete ./download\33651-Hatsune_Miku-Rubik's_Cube.zip successful
+2022-09-16 16:25:34 | INFO     | Downloading beatmapset: 320118-Reol-No title
+2022-09-16 16:25:41 | SUCCESS  | 320118-Reol-No title - 200 - Download successful
+2022-09-16 16:25:41 | INFO     | Writing file: ./download\320118-Reol-No_title.zip
+2022-09-16 16:25:41 | SUCCESS  | File write successful
+2022-09-16 16:25:41 | SUCCESS  | Unzip ./download\320118-Reol-No_title.zip successful
+2022-09-16 16:25:41 | SUCCESS  | Delete ./download\320118-Reol-No_title.zip successful
+2022-09-16 16:25:43 | INFO     | Downloading beatmapset: 429956-Kikuo-Aishite Aishite Aishite
+2022-09-16 16:25:45 | SUCCESS  | 429956-Kikuo-Aishite Aishite Aishite - 200 - Download successful
+2022-09-16 16:25:45 | INFO     | Writing file: ./download\429956-Kikuo-Aishite_Aishite_Aishite.zip
+2022-09-16 16:25:45 | SUCCESS  | File write successful
+2022-09-16 16:25:45 | SUCCESS  | Unzip ./download\429956-Kikuo-Aishite_Aishite_Aishite.zip successful
+2022-09-16 16:25:45 | SUCCESS  | Delete ./download\429956-Kikuo-Aishite_Aishite_Aishite.zip successful
+2022-09-16 16:25:47 | INFO     | Downloading beatmapset: 19789-Hatsune Miku & Megpoid Gumi-MATRYOSHKA
+2022-09-16 16:25:52 | SUCCESS  | 19789-Hatsune Miku & Megpoid Gumi-MATRYOSHKA - 200 - Download successful
+2022-09-16 16:25:52 | INFO     | Writing file: ./download\19789-Hatsune_Miku_&_Megpoid_Gumi-MATRYOSHKA.zip
+2022-09-16 16:25:52 | SUCCESS  | File write successful
+2022-09-16 16:25:52 | SUCCESS  | Unzip ./download\19789-Hatsune_Miku_&_Megpoid_Gumi-MATRYOSHKA.zip successful
+2022-09-16 16:25:52 | SUCCESS  | Delete ./download\19789-Hatsune_Miku_&_Megpoid_Gumi-MATRYOSHKA.zip successful
+2022-09-16 16:25:54 | INFO     | Downloading beatmapset: 1330999-Nakanoke no Itsutsugo-Gotoubun no Katachi (TV Size)
+2022-09-16 16:25:56 | SUCCESS  | 1330999-Nakanoke no Itsutsugo-Gotoubun no Katachi (TV Size) - 200 - Download successful
+2022-09-16 16:25:56 | INFO     | Writing file: ./download\1330999-Nakanoke_no_Itsutsugo-Gotoubun_no_Katachi_(TV_Size).zip
+2022-09-16 16:25:56 | SUCCESS  | File write successful
+2022-09-16 16:25:56 | SUCCESS  | Unzip ./download\1330999-Nakanoke_no_Itsutsugo-Gotoubun_no_Katachi_(TV_Size).zip successful
+2022-09-16 16:25:56 | SUCCESS  | Delete ./download\1330999-Nakanoke_no_Itsutsugo-Gotoubun_no_Katachi_(TV_Size).zip successful
+2022-09-16 16:25:58 | INFO     | Downloading beatmapset: 721804-Omoi-Teo
+2022-09-16 16:26:03 | SUCCESS  | 721804-Omoi-Teo - 200 - Download successful
+2022-09-16 16:26:03 | INFO     | Writing file: ./download\721804-Omoi-Teo.zip
+2022-09-16 16:26:03 | SUCCESS  | File write successful
+2022-09-16 16:26:03 | SUCCESS  | Unzip ./download\721804-Omoi-Teo.zip successful
+2022-09-16 16:26:03 | SUCCESS  | Delete ./download\721804-Omoi-Teo.zip successful
+2022-09-16 16:26:05 | INFO     | Downloading beatmapset: 100049-Himeringo-Yotsuya-san ni Yoroshiku
+2022-09-16 16:26:09 | SUCCESS  | 100049-Himeringo-Yotsuya-san ni Yoroshiku - 200 - Download successful
+2022-09-16 16:26:09 | INFO     | Writing file: ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip
+2022-09-16 16:26:09 | SUCCESS  | File write successful
+2022-09-16 16:26:10 | ERROR    | --rename--
+2022-09-16 16:26:10 | ERROR    | ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku/SB/red jitter/red_00000.jpg
+2022-09-16 16:26:10 | ERROR    | ==rename==
+2022-09-16 16:28:47 | INFO     | ############### DOWNLOADER STARTED ###############
+2022-09-16 16:28:48 | SUCCESS  | Login successfully
+2022-09-16 16:28:48 | INFO     | Scraping beatmapsets
+2022-09-16 16:28:48 | SUCCESS  | Scraped 15 beatmapsets
+2022-09-16 16:28:48 | ERROR    | BeatMapSet already downloaded: 19789-Hatsune Miku & Megpoid Gumi-MATRYOSHKA
+2022-09-16 16:28:48 | ERROR    | BeatMapSet already downloaded: 33651-Hatsune Miku-Rubik's Cube
+2022-09-16 16:28:48 | ERROR    | BeatMapSet already downloaded: 320118-Reol-No title
+2022-09-16 16:28:48 | ERROR    | BeatMapSet already downloaded: 429956-Kikuo-Aishite Aishite Aishite
+2022-09-16 16:28:48 | ERROR    | BeatMapSet already downloaded: 1330999-Nakanoke no Itsutsugo-Gotoubun no Katachi (TV Size)
+2022-09-16 16:28:48 | ERROR    | BeatMapSet already downloaded: 721804-Omoi-Teo
+2022-09-16 16:28:48 | INFO     | Downloading beatmapset: 968171-MIMI feat. Hatsune Miku-Mizuoto to Curtain
+2022-09-16 16:28:52 | SUCCESS  | 968171-MIMI feat. Hatsune Miku-Mizuoto to Curtain - 200 - Download successful
+2022-09-16 16:28:52 | INFO     | Writing file: ./download\968171-MIMI_feat._Hatsune_Miku-Mizuoto_to_Curtain.zip
+2022-09-16 16:28:52 | SUCCESS  | File write successful
+2022-09-16 16:28:52 | SUCCESS  | Unzip ./download\968171-MIMI_feat._Hatsune_Miku-Mizuoto_to_Curtain.zip successful
+2022-09-16 16:28:52 | SUCCESS  | Delete ./download\968171-MIMI_feat._Hatsune_Miku-Mizuoto_to_Curtain.zip successful
+2022-09-16 16:28:54 | INFO     | Downloading beatmapset: 952409-MIMI feat. Hatsune Miku-Ai no Sukima
+2022-09-16 16:28:56 | SUCCESS  | 952409-MIMI feat. Hatsune Miku-Ai no Sukima - 200 - Download successful
+2022-09-16 16:28:56 | INFO     | Writing file: ./download\952409-MIMI_feat._Hatsune_Miku-Ai_no_Sukima.zip
+2022-09-16 16:28:56 | SUCCESS  | File write successful
+2022-09-16 16:28:56 | SUCCESS  | Unzip ./download\952409-MIMI_feat._Hatsune_Miku-Ai_no_Sukima.zip successful
+2022-09-16 16:28:56 | SUCCESS  | Delete ./download\952409-MIMI_feat._Hatsune_Miku-Ai_no_Sukima.zip successful
+2022-09-16 16:28:58 | INFO     | Downloading beatmapset: 478405-Omoi-Snow Drive(01.23)
+2022-09-16 16:29:04 | SUCCESS  | 478405-Omoi-Snow Drive(01.23) - 200 - Download successful
+2022-09-16 16:29:04 | INFO     | Writing file: ./download\478405-Omoi-Snow_Drive(01.23).zip
+2022-09-16 16:29:04 | SUCCESS  | File write successful
+2022-09-16 16:29:04 | SUCCESS  | Unzip ./download\478405-Omoi-Snow_Drive(01.23).zip successful
+2022-09-16 16:29:04 | SUCCESS  | Delete ./download\478405-Omoi-Snow_Drive(01.23).zip successful
+2022-09-16 16:29:06 | INFO     | Downloading beatmapset: 100049-Himeringo-Yotsuya-san ni Yoroshiku
+2022-09-16 16:29:10 | SUCCESS  | 100049-Himeringo-Yotsuya-san ni Yoroshiku - 200 - Download successful
+2022-09-16 16:29:10 | INFO     | Writing file: ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip
+2022-09-16 16:29:10 | SUCCESS  | File write successful
+2022-09-16 16:29:11 | ERROR    | --rename--
+2022-09-16 16:29:11 | ERROR    | ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku/SB/red jitter/red_00000.jpg
+2022-09-16 16:29:11 | ERROR    | ==rename==
+2022-09-16 16:29:11 | SUCCESS  | Unzip ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip successful
+2022-09-16 16:29:11 | SUCCESS  | Delete ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip successful
+2022-09-16 16:29:13 | INFO     | Downloading beatmapset: 758101-Co shu Nie-asphyxia (TV edit)
+2022-09-16 16:29:17 | SUCCESS  | 758101-Co shu Nie-asphyxia (TV edit) - 200 - Download successful
+2022-09-16 16:29:17 | INFO     | Writing file: ./download\758101-Co_shu_Nie-asphyxia_(TV_edit).zip
+2022-09-16 16:29:17 | SUCCESS  | File write successful
+2022-09-16 16:29:17 | SUCCESS  | Unzip ./download\758101-Co_shu_Nie-asphyxia_(TV_edit).zip successful
+2022-09-16 16:29:17 | SUCCESS  | Delete ./download\758101-Co_shu_Nie-asphyxia_(TV_edit).zip successful
+2022-09-16 16:29:19 | INFO     | Downloading beatmapset: 962088-MIMI feat. Hatsune Miku-Marshmary
+2022-09-16 16:29:23 | SUCCESS  | 962088-MIMI feat. Hatsune Miku-Marshmary - 200 - Download successful
+2022-09-16 16:29:23 | INFO     | Writing file: ./download\962088-MIMI_feat._Hatsune_Miku-Marshmary.zip
+2022-09-16 16:29:23 | SUCCESS  | File write successful
+2022-09-16 16:29:23 | SUCCESS  | Unzip ./download\962088-MIMI_feat._Hatsune_Miku-Marshmary.zip successful
+2022-09-16 16:29:23 | SUCCESS  | Delete ./download\962088-MIMI_feat._Hatsune_Miku-Marshmary.zip successful
+2022-09-16 16:29:25 | INFO     | Downloading beatmapset: 36858-Hatsune Miku-Senbonzakura (Short Ver.)
+2022-09-16 16:29:27 | SUCCESS  | 36858-Hatsune Miku-Senbonzakura (Short Ver.) - 200 - Download successful
+2022-09-16 16:29:27 | INFO     | Writing file: ./download\36858-Hatsune_Miku-Senbonzakura_(Short_Ver.).zip
+2022-09-16 16:29:27 | SUCCESS  | File write successful
+2022-09-16 16:29:27 | SUCCESS  | Unzip ./download\36858-Hatsune_Miku-Senbonzakura_(Short_Ver.).zip successful
+2022-09-16 16:29:27 | SUCCESS  | Delete ./download\36858-Hatsune_Miku-Senbonzakura_(Short_Ver.).zip successful
+2022-09-16 16:29:29 | INFO     | Downloading beatmapset: 1287-Hatsune Miku-Ievan Polkka
+2022-09-16 16:29:32 | SUCCESS  | 1287-Hatsune Miku-Ievan Polkka - 200 - Download successful
+2022-09-16 16:29:32 | INFO     | Writing file: ./download\1287-Hatsune_Miku-Ievan_Polkka.zip
+2022-09-16 16:29:32 | SUCCESS  | File write successful
+2022-09-16 16:29:32 | SUCCESS  | Unzip ./download\1287-Hatsune_Miku-Ievan_Polkka.zip successful
+2022-09-16 16:29:32 | SUCCESS  | Delete ./download\1287-Hatsune_Miku-Ievan_Polkka.zip successful
+2022-09-16 16:29:34 | INFO     | Downloading beatmapset: 413117-DECO_27-Ghost Rule
+2022-09-16 16:29:37 | SUCCESS  | 413117-DECO_27-Ghost Rule - 200 - Download successful
+2022-09-16 16:29:37 | INFO     | Writing file: ./download\413117-DECO_27-Ghost_Rule.zip
+2022-09-16 16:29:37 | SUCCESS  | File write successful
+2022-09-16 16:29:37 | SUCCESS  | Unzip ./download\413117-DECO_27-Ghost_Rule.zip successful
+2022-09-16 16:29:37 | SUCCESS  | Delete ./download\413117-DECO_27-Ghost_Rule.zip successful
+2022-09-16 16:29:39 | INFO     | ############## DOWNLOADER FINISHED ###############
+
+2022-09-16 16:29:39 | INFO     | ############### DOWNLOADER STARTED ###############
+2022-09-16 16:29:40 | SUCCESS  | Login successfully
+2022-09-16 16:29:40 | INFO     | Scraping beatmapsets
+2022-09-16 16:29:40 | SUCCESS  | Scraped 50 beatmapsets
+2022-09-16 16:29:40 | INFO     | Downloading beatmapset: 1189995-Roselia-FIRE BIRD
+2022-09-16 16:29:45 | SUCCESS  | 1189995-Roselia-FIRE BIRD - 200 - Download successful
+2022-09-16 16:29:45 | INFO     | Writing file: ./download\1189995-Roselia-FIRE_BIRD.zip
+2022-09-16 16:29:45 | SUCCESS  | File write successful
+2022-09-16 16:29:45 | SUCCESS  | Unzip ./download\1189995-Roselia-FIRE_BIRD.zip successful
+2022-09-16 16:29:45 | SUCCESS  | Delete ./download\1189995-Roselia-FIRE_BIRD.zip successful
+2022-09-16 16:29:47 | INFO     | Downloading beatmapset: 971144-Nana Mizuki-Nageki no Hana (Slax Remix) (Sped Up Ver.)
+2022-09-16 16:29:52 | INFO     | ############### DOWNLOADER STARTED ###############
+2022-09-16 16:29:52 | SUCCESS  | Login successfully
+2022-09-16 16:29:52 | INFO     | Scraping beatmapsets
+2022-09-16 16:29:53 | SUCCESS  | Scraped 15 beatmapsets
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 952409-MIMI feat. Hatsune Miku-Ai no Sukima
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 478405-Omoi-Snow Drive(01.23)
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 19789-Hatsune Miku & Megpoid Gumi-MATRYOSHKA
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 33651-Hatsune Miku-Rubik's Cube
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 320118-Reol-No title
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 429956-Kikuo-Aishite Aishite Aishite
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 1330999-Nakanoke no Itsutsugo-Gotoubun no Katachi (TV Size)
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 721804-Omoi-Teo
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 758101-Co shu Nie-asphyxia (TV edit)
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 962088-MIMI feat. Hatsune Miku-Marshmary
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 36858-Hatsune Miku-Senbonzakura (Short Ver.)
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 1287-Hatsune Miku-Ievan Polkka
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 413117-DECO_27-Ghost Rule
+2022-09-16 16:29:53 | ERROR    | BeatMapSet already downloaded: 968171-MIMI feat. Hatsune Miku-Mizuoto to Curtain
+2022-09-16 16:29:53 | INFO     | Downloading beatmapset: 100049-Himeringo-Yotsuya-san ni Yoroshiku
+2022-09-16 16:29:59 | SUCCESS  | 100049-Himeringo-Yotsuya-san ni Yoroshiku - 200 - Download successful
+2022-09-16 16:29:59 | INFO     | Writing file: ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip
+2022-09-16 16:29:59 | SUCCESS  | File write successful
+2022-09-16 16:30:00 | ERROR    | --rename--
+2022-09-16 16:30:00 | ERROR    | ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku/SB/red jitter/red_00000.jpg
+2022-09-16 16:30:00 | ERROR    | ==rename==
+2022-09-16 16:30:00 | ERROR    | --remove--
+2022-09-16 16:30:00 | ERROR    | ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku/SB/red jitter/red_00000.jpg
+2022-09-16 16:30:00 | ERROR    | ==remove==
+2022-09-16 16:30:00 | SUCCESS  | Unzip ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip successful
+2022-09-16 16:30:00 | SUCCESS  | Delete ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip successful
+2022-09-16 16:30:02 | INFO     | ############## DOWNLOADER FINISHED ###############
+
+2022-09-16 16:30:02 | INFO     | ############### DOWNLOADER STARTED ###############
+2022-09-16 16:30:02 | SUCCESS  | Login successfully
+2022-09-16 16:30:02 | INFO     | Scraping beatmapsets
+2022-09-16 16:30:03 | SUCCESS  | Scraped 50 beatmapsets
+2022-09-16 16:30:03 | ERROR    | BeatMapSet already downloaded: 1189995-Roselia-FIRE BIRD
+2022-09-16 16:30:03 | INFO     | Downloading beatmapset: 1541648-Poppin'Party-Koko kara Saki wa Uta ni Naranai (TV Size)
+2022-09-16 16:30:07 | SUCCESS  | 1541648-Poppin'Party-Koko kara Saki wa Uta ni Naranai (TV Size) - 200 - Download successful
+2022-09-16 16:30:07 | INFO     | Writing file: ./download\1541648-Poppin'Party-Koko_kara_Saki_wa_Uta_ni_Naranai_(TV_Size).zip
+2022-09-16 16:30:07 | SUCCESS  | File write successful
+2022-09-16 16:30:07 | SUCCESS  | Unzip ./download\1541648-Poppin'Party-Koko_kara_Saki_wa_Uta_ni_Naranai_(TV_Size).zip successful
+2022-09-16 16:30:07 | SUCCESS  | Delete ./download\1541648-Poppin'Party-Koko_kara_Saki_wa_Uta_ni_Naranai_(TV_Size).zip successful
+2022-09-16 16:30:09 | INFO     | Downloading beatmapset: 1178152-ARIANNE-KOMM, SUESSER TOD (M-10 Director's Edit Version)
+2022-09-16 16:31:45 | INFO     | ############### DOWNLOADER STARTED ###############
+2022-09-16 16:31:46 | SUCCESS  | Login successfully
+2022-09-16 16:31:46 | INFO     | Scraping beatmapsets
+2022-09-16 16:31:46 | SUCCESS  | Scraped 15 beatmapsets
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 413117-DECO_27-Ghost Rule
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 968171-MIMI feat. Hatsune Miku-Mizuoto to Curtain
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 952409-MIMI feat. Hatsune Miku-Ai no Sukima
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 478405-Omoi-Snow Drive(01.23)
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 19789-Hatsune Miku & Megpoid Gumi-MATRYOSHKA
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 33651-Hatsune Miku-Rubik's Cube
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 320118-Reol-No title
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 429956-Kikuo-Aishite Aishite Aishite
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 1330999-Nakanoke no Itsutsugo-Gotoubun no Katachi (TV Size)
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 721804-Omoi-Teo
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 758101-Co shu Nie-asphyxia (TV edit)
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 962088-MIMI feat. Hatsune Miku-Marshmary
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 36858-Hatsune Miku-Senbonzakura (Short Ver.)
+2022-09-16 16:31:46 | ERROR    | BeatMapSet already downloaded: 1287-Hatsune Miku-Ievan Polkka
+2022-09-16 16:31:46 | INFO     | Downloading beatmapset: 100049-Himeringo-Yotsuya-san ni Yoroshiku
+2022-09-16 16:31:52 | SUCCESS  | 100049-Himeringo-Yotsuya-san ni Yoroshiku - 200 - Download successful
+2022-09-16 16:31:52 | INFO     | Writing file: ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip
+2022-09-16 16:31:52 | SUCCESS  | File write successful
+2022-09-16 16:31:52 | ERROR    | --remove--
+2022-09-16 16:31:52 | ERROR    | ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku/SB/red jitter/red_00000.jpg
+2022-09-16 16:31:52 | ERROR    | ==remove==
+2022-09-16 16:31:52 | SUCCESS  | Unzip ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip successful
+2022-09-16 16:31:52 | SUCCESS  | Delete ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip successful
+2022-09-16 16:31:54 | INFO     | ############## DOWNLOADER FINISHED ###############
+
+2022-09-16 16:31:54 | INFO     | ############### DOWNLOADER STARTED ###############
+2022-09-16 16:31:55 | SUCCESS  | Login successfully
+2022-09-16 16:31:55 | INFO     | Scraping beatmapsets
+2022-09-16 16:31:55 | SUCCESS  | Scraped 50 beatmapsets
+2022-09-16 16:31:55 | ERROR    | BeatMapSet already downloaded: 1189995-Roselia-FIRE BIRD
+2022-09-16 16:31:55 | ERROR    | BeatMapSet already downloaded: 1541648-Poppin'Party-Koko kara Saki wa Uta ni Naranai (TV Size)
+2022-09-16 16:31:55 | INFO     | Downloading beatmapset: 1411613-ALTIMA-Fight 4 Real (TV Size)
+2022-09-16 16:32:23 | INFO     | ############### DOWNLOADER STARTED ###############
+2022-09-16 16:32:23 | SUCCESS  | Login successfully
+2022-09-16 16:32:23 | INFO     | Scraping beatmapsets
+2022-09-16 16:32:24 | SUCCESS  | Scraped 15 beatmapsets
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 413117-DECO_27-Ghost Rule
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 968171-MIMI feat. Hatsune Miku-Mizuoto to Curtain
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 952409-MIMI feat. Hatsune Miku-Ai no Sukima
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 478405-Omoi-Snow Drive(01.23)
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 19789-Hatsune Miku & Megpoid Gumi-MATRYOSHKA
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 33651-Hatsune Miku-Rubik's Cube
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 320118-Reol-No title
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 429956-Kikuo-Aishite Aishite Aishite
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 1330999-Nakanoke no Itsutsugo-Gotoubun no Katachi (TV Size)
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 721804-Omoi-Teo
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 758101-Co shu Nie-asphyxia (TV edit)
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 962088-MIMI feat. Hatsune Miku-Marshmary
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 36858-Hatsune Miku-Senbonzakura (Short Ver.)
+2022-09-16 16:32:24 | ERROR    | BeatMapSet already downloaded: 1287-Hatsune Miku-Ievan Polkka
+2022-09-16 16:32:24 | INFO     | Downloading beatmapset: 100049-Himeringo-Yotsuya-san ni Yoroshiku
+2022-09-16 16:32:30 | SUCCESS  | 100049-Himeringo-Yotsuya-san ni Yoroshiku - 200 - Download successful
+2022-09-16 16:32:30 | INFO     | Writing file: ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip
+2022-09-16 16:32:30 | SUCCESS  | File write successful
+2022-09-16 16:32:31 | ERROR    | --remove--
+2022-09-16 16:32:31 | ERROR    | ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku/SB/red jitter/red_00000.jpg, ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku/SB/red_jitter/red_00000.jpg, ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku
+2022-09-16 16:32:31 | ERROR    | ==remove==
+2022-09-16 16:32:31 | SUCCESS  | Unzip ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip successful
+2022-09-16 16:32:31 | SUCCESS  | Delete ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip successful
+2022-09-16 16:32:33 | INFO     | ############## DOWNLOADER FINISHED ###############
+
+2022-09-16 16:32:33 | INFO     | ############### DOWNLOADER STARTED ###############
+2022-09-16 16:32:34 | SUCCESS  | Login successfully
+2022-09-16 16:32:34 | INFO     | Scraping beatmapsets
+2022-09-16 16:32:34 | SUCCESS  | Scraped 50 beatmapsets
+2022-09-16 16:32:34 | ERROR    | BeatMapSet already downloaded: 1189995-Roselia-FIRE BIRD
+2022-09-16 16:32:34 | ERROR    | BeatMapSet already downloaded: 1541648-Poppin'Party-Koko kara Saki wa Uta ni Naranai (TV Size)
+2022-09-16 16:32:34 | INFO     | Downloading beatmapset: 1411613-ALTIMA-Fight 4 Real (TV Size)
+2022-09-16 16:32:38 | SUCCESS  | 1411613-ALTIMA-Fight 4 Real (TV Size) - 200 - Download successful
+2022-09-16 16:32:38 | INFO     | Writing file: ./download\1411613-ALTIMA-Fight_4_Real_(TV_Size).zip
+2022-09-16 16:32:38 | SUCCESS  | File write successful
+2022-09-16 16:32:38 | SUCCESS  | Unzip ./download\1411613-ALTIMA-Fight_4_Real_(TV_Size).zip successful
+2022-09-16 16:32:38 | SUCCESS  | Delete ./download\1411613-ALTIMA-Fight_4_Real_(TV_Size).zip successful
+2022-09-16 16:32:40 | INFO     | Downloading beatmapset: 1222161-Poppin'Party-KIZUNA MUSIC
+2022-09-16 16:32:48 | INFO     | ############### DOWNLOADER STARTED ###############
+2022-09-16 16:32:49 | SUCCESS  | Login successfully
+2022-09-16 16:32:49 | INFO     | Scraping beatmapsets
+2022-09-16 16:32:49 | SUCCESS  | Scraped 15 beatmapsets
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 413117-DECO_27-Ghost Rule
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 968171-MIMI feat. Hatsune Miku-Mizuoto to Curtain
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 952409-MIMI feat. Hatsune Miku-Ai no Sukima
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 478405-Omoi-Snow Drive(01.23)
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 19789-Hatsune Miku & Megpoid Gumi-MATRYOSHKA
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 33651-Hatsune Miku-Rubik's Cube
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 320118-Reol-No title
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 429956-Kikuo-Aishite Aishite Aishite
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 1330999-Nakanoke no Itsutsugo-Gotoubun no Katachi (TV Size)
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 721804-Omoi-Teo
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 758101-Co shu Nie-asphyxia (TV edit)
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 962088-MIMI feat. Hatsune Miku-Marshmary
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 36858-Hatsune Miku-Senbonzakura (Short Ver.)
+2022-09-16 16:32:49 | ERROR    | BeatMapSet already downloaded: 1287-Hatsune Miku-Ievan Polkka
+2022-09-16 16:32:49 | INFO     | Downloading beatmapset: 100049-Himeringo-Yotsuya-san ni Yoroshiku
+2022-09-16 16:32:55 | SUCCESS  | 100049-Himeringo-Yotsuya-san ni Yoroshiku - 200 - Download successful
+2022-09-16 16:32:55 | INFO     | Writing file: ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip
+2022-09-16 16:32:55 | SUCCESS  | File write successful
+2022-09-16 16:32:56 | ERROR    | --remove--
+2022-09-16 16:32:56 | ERROR    | ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku/SB/red jitter/red_00000.jpg
+./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku/SB/red_jitter/red_00000.jpg
+./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku
+2022-09-16 16:32:56 | ERROR    | ==remove==
+2022-09-16 16:32:56 | SUCCESS  | Unzip ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip successful
+2022-09-16 16:32:56 | SUCCESS  | Delete ./download\100049-Himeringo-Yotsuya-san_ni_Yoroshiku.zip successful
+2022-09-16 16:32:58 | INFO     | ############## DOWNLOADER FINISHED ###############
+
+2022-09-16 16:32:58 | INFO     | ############### DOWNLOADER STARTED ###############
+2022-09-16 16:32:58 | SUCCESS  | Login successfully
+2022-09-16 16:32:58 | INFO     | Scraping beatmapsets
+2022-09-16 16:32:58 | SUCCESS  | Scraped 50 beatmapsets
+2022-09-16 16:32:58 | ERROR    | BeatMapSet already downloaded: 1411613-ALTIMA-Fight 4 Real (TV Size)
+2022-09-16 16:32:58 | ERROR    | BeatMapSet already downloaded: 1189995-Roselia-FIRE BIRD
+2022-09-16 16:32:58 | ERROR    | BeatMapSet already downloaded: 1541648-Poppin'Party-Koko kara Saki wa Uta ni Naranai (TV Size)
+2022-09-16 16:32:58 | INFO     | Downloading beatmapset: 1222161-Poppin'Party-KIZUNA MUSIC
