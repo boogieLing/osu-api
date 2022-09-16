@@ -12,7 +12,7 @@ import requests
 from InquirerPy import prompt
 from loguru import logger
 
-from const import IMAGE_TYPE, MUSIC_TYPE
+from const import IMAGE_TYPE, MUSIC_TYPE, PROJECT_PATH
 
 DOWNLOAD_PATH = os.curdir
 # Windows
@@ -23,7 +23,7 @@ else:
     USERPROFILE = os.getenv("HOME")
 HOME_DIR = os.path.join(USERPROFILE, ".osu-beatmap-downloader")
 CREDS_FILEPATH = os.path.join(HOME_DIR, "credentials.json")
-LOGS_FILEPATH = os.path.join(HOME_DIR, "downloader.logs")
+LOGS_FILEPATH = os.path.join(PROJECT_PATH, "logs", f'downloader/{time.strftime("%Y-%m-%d")}.log')
 ILLEGAL_CHARS = re.compile(r"[\<\>:\"\/\\\|\?*]")
 
 FORMAT_TIME = "<cyan>{time:YYYY-MM-DD HH:mm:ss}</cyan>"
@@ -131,24 +131,27 @@ def unzip_beatmapset_file(origin_file, target_dir):
     zip_list = zip_file.namelist()  # 压缩文件清单，可以直接看到压缩包内的各个文件的明细
     for f in zip_list:
         title = f.replace(" ", "_")
-        if title.lower().endswith(IMAGE_TYPE):
+        if title.lower().endswith(IMAGE_TYPE + MUSIC_TYPE):
             zip_file.extract(f, target_dir)
-            origin_pic_file = target_dir + "/" + f
-            pic_file = target_dir + "/" + title
-            os.rename(origin_pic_file, pic_file)
-            kbSize = os.path.getsize(pic_file) / 1024
-            if kbSize < 300.0:
-                # 小于300kb的图片无用
-                os.remove(pic_file)
-        if title.lower().endswith(MUSIC_TYPE):
-            zip_file.extract(f, target_dir)
-            origin_music_file = target_dir + "/" + f
-            music_file = target_dir + "/" + title
-            os.rename(origin_music_file, music_file)
-            mbSize = os.path.getsize(music_file) / 1024 / 1024
-            if mbSize < 1.0:
-                # 小于1MB的音频无用
-                os.remove(music_file)
+            origin_item = target_dir + "/" + f
+            rename_item = target_dir + "/" + title
+            try:
+                os.rename(origin_item, rename_item)
+            except Exception:
+                logger.error("--rename--")
+                logger.error(origin_item, rename_item)
+                logger.error("==rename==")
+                continue
+            if title.lower().endswith(IMAGE_TYPE):
+                kbSize = os.path.getsize(rename_item) / 1024
+                if kbSize < 300.0:
+                    # 小于300kb的图片无用
+                    os.remove(rename_item)
+            if title.lower().endswith(MUSIC_TYPE):
+                mbSize = os.path.getsize(rename_item) / 1024 / 1024
+                if mbSize < 1.0:
+                    # 小于1MB的音频无用
+                    os.remove(rename_item)
 
     zip_file.close()
     logger.success(f"Unzip {origin_file} successful")
