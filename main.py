@@ -22,6 +22,7 @@ async def random_beatmap():
         "data": random_result
     }
 
+
 @app.get("/beatmap_list")
 async def beatmap_list():
     return show_folder_files(DOWNLOAD_RES_PATH)
