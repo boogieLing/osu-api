@@ -130,7 +130,7 @@ def unzip_beatmapset_file(origin_file, target_dir):
     zip_file = zipfile.ZipFile(origin_file)
     zip_list = zip_file.namelist()  # 压缩文件清单，可以直接看到压缩包内的各个文件的明细
     for f in zip_list:
-        title = f.title().replace(" ", "_")
+        title = f.replace(" ", "_")
         if title.lower().endswith(IMAGE_TYPE):
             zip_file.extract(f, target_dir)
             origin_pic_file = target_dir + "/" + f.title()
@@ -142,8 +142,9 @@ def unzip_beatmapset_file(origin_file, target_dir):
                 os.remove(pic_file)
         if title.lower().endswith(MUSIC_TYPE):
             zip_file.extract(f, target_dir)
-            origin_music_file = target_dir + "/" + f.title()
+            origin_music_file = target_dir + "/" + f
             music_file = target_dir + "/" + title
+            print(origin_music_file, music_file)
             os.rename(origin_music_file, music_file)
             mbSize = os.path.getsize(music_file) / 1024 / 1024
             if mbSize < 1.0:
