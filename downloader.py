@@ -23,7 +23,7 @@ else:
     USERPROFILE = os.getenv("HOME")
 HOME_DIR = os.path.join(USERPROFILE, ".osu-beatmap-downloader")
 CREDS_FILEPATH = os.path.join(HOME_DIR, "credentials.json")
-LOGS_FILEPATH = os.path.join(HOME_DIR, "downloader.log")
+LOGS_FILEPATH = os.path.join(HOME_DIR, "downloader.logs")
 ILLEGAL_CHARS = re.compile(r"[\<\>:\"\/\\\|\?*]")
 
 FORMAT_TIME = "<cyan>{time:YYYY-MM-DD HH:mm:ss}</cyan>"
@@ -175,14 +175,14 @@ def get_file_duration(path):
 
 
 class Downloader:
-    def __init__(self, limit, no_video, params, no_cmd=False):
+    def __init__(self, limit, no_video, params, certification, no_cmd=False):
         self.beatmapsets = set()
         self.limit = limit
         self.no_video = no_video
         self.cred_helper = CredentialHelper()  # 需要一个合法用户
         if no_cmd:
-            if params["username"] and  params["password"]:
-                self.cred_helper.ask_credentials_no_cmd(params["username"], params["password"])
+            if certification["username"] and certification["password"]:
+                self.cred_helper.ask_credentials_no_cmd(certification["username"], certification["password"])
             else:
                 logger.error("When do not use cmd to download, you need to provide a username and password")
                 return
@@ -341,18 +341,61 @@ def main():
                 print("There is no credential file to delete")
 
 
-def no_cmd_download(limit: int, params: Dict[str, str]):
-    loader = Downloader(limit, "store_true", params, True)
+def no_cmd_download(limit: int, params: Dict[str, str], certification: Dict[str, str]):
+    loader = Downloader(limit, "store_true", params, certification, True)
     loader.run()
 
 
-if __name__ == "__main__":
+def update_daywise():
     no_cmd_download(
-        2,
+        15,
         {
             "q": "Miku",
             "sort": "favourites_desc",
+
+        },
+        {
             "username": "z_fish",
             "password": "cherilee233osu"
         },
     )
+    no_cmd_download(
+        50,
+        {
+            "g": 3,  # 动漫分类
+            "s": "any",
+            "sort": "rating_desc",
+        },
+        {
+            "username": "z_fish",
+            "password": "cherilee233osu"
+        },
+    )
+    no_cmd_download(
+        10,
+        {
+            "g": 3,  # 动漫分类
+            "s": "any",
+            "sort": "plays_desc",
+        },
+        {
+            "username": "z_fish",
+            "password": "cherilee233osu"
+        },
+    )
+    no_cmd_download(
+        15,
+        {
+            "q": "嘉然",  # 动漫分类
+            "s": "any",
+            "sort": "rating_desc",
+        },
+        {
+            "username": "z_fish",
+            "password": "cherilee233osu"
+        },
+    )
+
+
+if __name__ == "__main__":
+    update_daywise()

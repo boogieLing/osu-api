@@ -1,14 +1,43 @@
 import os
 import random
-from typing import Dict
+import sys
+from typing import Dict, Tuple
 
 import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
-from const import DOWNLOAD_RES_PATH
+from const import DOWNLOAD_RES_PATH, PROJECT_NAME, DESCRIPTION, VERSION, DEBUG, LOG_DIR
+from constom_log import InterceptHandler, format_record
 from utils import show_folder_files, show_beatmap
+import logging
+from loguru import logger
 
-app = FastAPI()
+
+def init_app():
+    _app = FastAPI(title=PROJECT_NAME, version=VERSION,
+                   description=DESCRIPTION, debug=DEBUG)
+    return _app
+
+
+app = init_app()
+
+
+@app.on_event("startup")
+async def startup_event():
+    logging.getLogger("uvicorn").handlers.clear()
+    # logging.getLogger().handlers = [InterceptHandler()]
+    logger.configure(
+        handlers=[{
+            "sink": sys.stdout,
+            "level": logging.DEBUG,
+            "format": format_record
+        }]
+    )
+    logger.add(LOG_DIR, encoding="utf-8", rotation="9:46")
+    logger.debug("日志系统已加载")
+    logging.getLogger("uvicorn.access").handlers = [InterceptHandler()]
+    logging.getLogger("uvicorn").handlers = [InterceptHandler()]
+    app.logger = logger
 
 
 @app.get("/random_beatmap")
@@ -46,4 +75,4 @@ async def music(folder: str, music_name: str):
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, port=11312, debug=True)
+    uvicorn.run(app, port=11312, debug=True, access_log=True, )
