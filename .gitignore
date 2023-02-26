@@ -3,4 +3,4 @@ download
 venv
 __pycache__
 logs
-./const.py
+const.py
