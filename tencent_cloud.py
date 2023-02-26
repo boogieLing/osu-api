@@ -5,8 +5,8 @@ from qcloud_cos import CosConfig, CosServiceError
 from qcloud_cos import CosS3Client
 from qcloud_cos.cos_threadpool import SimpleThreadPool
 
-from const import COS_REGION, COS_SECRET_ID, COS_SECRET_KEY, COS_TOKEN, COS_SCHEMA, COS_OSU_BUCKET, COS_OSU_PATH, \
-    IMAGE_TYPE
+from tc_config import COS_REGION, COS_SECRET_ID, COS_SECRET_KEY, COS_TOKEN, COS_SCHEMA, COS_OSU_BUCKET, COS_OSU_PATH
+from const import IMAGE_TYPE, OSU_DIR, OSU_IMG_DIR, OSU_CATEGORY_LIST
 
 # pip install -U cos-python-sdk-v5
 
@@ -69,3 +69,45 @@ def tencent_cos_upload(category, upload_dir, beatMap_name):
     else:
         logger.success(f"{upload_dir} upload sucessed.")
         # shutil.rmtree(upload_dir)
+
+
+def tencent_cos_imag_list() -> tuple[dict, list]:
+    urls = list()
+    url_table = dict()
+    for category in tencent_cos_osu_list():
+        cur_urls = list()
+        # 列举 osu/分类/ 目录下的文件：COS中的目录是'/'结尾的前缀名
+        response = client.list_objects(
+            Bucket=COS_OSU_BUCKET,
+            Prefix=OSU_DIR + category + OSU_IMG_DIR
+        )
+        # 打印文件列表
+        if 'Contents' in response:
+            for content in response['Contents']:
+                # 生成URL
+                url = client.get_object_url(
+                    Bucket=COS_OSU_BUCKET,
+                    Key=content['Key']
+                )
+                urls.append(url)
+                cur_urls.append(url)
+        url_table[category] = cur_urls
+    return url_table, urls
+
+
+def tencent_cos_osu_list() -> list:
+    response = client.list_objects(
+        Bucket=COS_OSU_BUCKET,
+        Prefix=OSU_DIR,
+        Delimiter='/'
+    )
+    category_list = list()
+    # 打印子目录
+    if 'CommonPrefixes' in response:
+        for folder in response['CommonPrefixes']:
+            category_list.append(folder['Prefix'][len(OSU_DIR):])
+    return category_list
+
+
+if __name__ == '__main__':
+    tencent_cos_osu_list()

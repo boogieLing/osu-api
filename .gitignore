@@ -4,4 +4,4 @@ venv
 __pycache__
 logs
 
-const.py
+tc_config.py

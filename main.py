@@ -8,6 +8,7 @@ from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
 from const import DOWNLOAD_RES_PATH, PROJECT_NAME, DESCRIPTION, VERSION, DEBUG, LOG_DIR
 from constom_log import InterceptHandler, format_record
+from get import osu_pic
 from utils import show_folder_files, show_beatmap
 import logging
 from loguru import logger
@@ -62,6 +63,13 @@ async def random_beatmap():
     }
 
 
+@app.get("/random_pic")
+async def random_pic():
+    return {
+        "data": osu_pic.random_pic()
+    }
+
+
 @app.get("/beatmap_list")
 async def beatmap_list():
     return show_folder_files(DOWNLOAD_RES_PATH)
@@ -72,13 +80,13 @@ async def beatmap(name: str):
     return show_beatmap(name)
 
 
-@app.get("/image/{folder}/{image_name}")
+@app.get("/image/{folder}/{image_name}", deprecated=True)
 async def image(folder: str, image_name: str):
     file_stream = open(os.path.join(DOWNLOAD_RES_PATH, folder, image_name), mode="rb")
     return StreamingResponse(file_stream, media_type="image")
 
 
-@app.get("/music/{folder}/{music_name}")
+@app.get("/music/{folder}/{music_name}", deprecated=True)
 async def music(folder: str, music_name: str):
     file_stream = open(os.path.join(DOWNLOAD_RES_PATH, folder, music_name), mode="rb")
     return StreamingResponse(file_stream, media_type="music")

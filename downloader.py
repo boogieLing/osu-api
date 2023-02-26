@@ -376,65 +376,65 @@ def no_cmd_download(limit: int, category: str, params: Dict[str, str], certifica
 
 
 def update_daywise():
-    # no_cmd_download(
-    #     50,
-    #     "Hatsune Miku",
-    #     {
-    #         "q": "Hatsune Miku",
-    #     },
-    #     {
-    #         "username": "z_fish",
-    #         "password": "cherilee233osu"
-    #     },
-    # )
-    # time.sleep(5)
-    # no_cmd_download(
-    #     10,
-    #     "one piece",
-    #     {
-    #         "q": "one piece",
-    #     },
-    #     {
-    #         "username": "z_fish",
-    #         "password": "cherilee233osu"
-    #     },
-    # )
-    # time.sleep(5)
-    # no_cmd_download(
-    #     30,
-    #     "Aisaka Taiga",
-    #     {
-    #         "q": "Aisaka Taiga",
-    #     },
-    #     {
-    #         "username": "z_fish",
-    #         "password": "cherilee233osu"
-    #     },
-    # )
-    # no_cmd_download(
-    #     50,
-    #     "k-on",
-    #     {
-    #         "q": "k-on",
-    #     },
-    #     {
-    #         "username": "z_fish",
-    #         "password": "cherilee233osu"
-    #     },
-    # )
-    # time.sleep(5)
-    # no_cmd_download(
-    #     30,
-    #     "Touhou Project",
-    #     {
-    #         "q": "Touhou Project",
-    #     },
-    #     {
-    #         "username": "z_fish",
-    #         "password": "cherilee233osu"
-    #     },
-    # )
-    # time.sleep(5)
+    no_cmd_download(
+        50,
+        "Hatsune Miku",
+        {
+            "q": "初音",
+        },
+        {
+            "username": "z_fish",
+            "password": "cherilee233osu"
+        },
+    )
+    time.sleep(5)
+    no_cmd_download(
+        10,
+        "one piece",
+        {
+            "q": "one piece",
+        },
+        {
+            "username": "z_fish",
+            "password": "cherilee233osu"
+        },
+    )
+    time.sleep(5)
+    no_cmd_download(
+        30,
+        "Aisaka Taiga",
+        {
+            "q": "Aisaka Taiga",
+        },
+        {
+            "username": "z_fish",
+            "password": "cherilee233osu"
+        },
+    )
+    no_cmd_download(
+        50,
+        "k-on",
+        {
+            "q": "k-on",
+        },
+        {
+            "username": "z_fish",
+            "password": "cherilee233osu"
+        },
+    )
+    time.sleep(5)
+    no_cmd_download(
+        30,
+        "Touhou Project",
+        {
+            "q": "Touhou Project",
+        },
+        {
+            "username": "z_fish",
+            "password": "cherilee233osu"
+        },
+    )
+    time.sleep(5)
     while 1:
         try:
             no_cmd_download(
@@ -476,5 +476,14 @@ def update_daywise():
 
 
 if __name__ == "__main__":
-    update_daywise()
-    # test_single()
+    no_cmd_download(
+        50,
+        "Hatsune Miku",
+        {
+            "q": "初音",
+        },
+        {
+            "username": "z_fish",
+            "password": "cherilee233osu"
+        },
+    )
