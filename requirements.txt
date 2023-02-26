@@ -43,3 +43,4 @@ zipp==3.8.1
 starlette
 loguru
 pytest-shutil
+cos-python-sdk-v5
