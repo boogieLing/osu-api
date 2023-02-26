@@ -1,13 +1,12 @@
 import os
-import shutil
 
+from loguru import logger
+from qcloud_cos import CosConfig, CosServiceError
+from qcloud_cos import CosS3Client
 from qcloud_cos.cos_threadpool import SimpleThreadPool
 
 from const import COS_REGION, COS_SECRET_ID, COS_SECRET_KEY, COS_TOKEN, COS_SCHEMA, COS_OSU_BUCKET, COS_OSU_PATH, \
     IMAGE_TYPE
-from qcloud_cos import CosConfig, CosServiceError
-from qcloud_cos import CosS3Client
-from loguru import logger
 
 # pip install -U cos-python-sdk-v5
 
