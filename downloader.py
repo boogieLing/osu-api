@@ -451,12 +451,7 @@ def update_daywise():
             break
         except ValueError as e:
             logger.error(e)
-            if e == "DOWNLOADER TERMINATED":
-                logger.error(e)
-                time.sleep(60)
-                continue
-            else:
-                break
+            time.sleep(60)
     while 1:
         try:
             logger.info("日语-上架时间")
@@ -477,11 +472,7 @@ def update_daywise():
             break
         except ValueError as e:
             logger.error(e)
-            if e == "DOWNLOADER TERMINATED":
-                time.sleep(60)
-                continue
-            else:
-                break
+            time.sleep(60)
 
 
 if __name__ == "__main__":
