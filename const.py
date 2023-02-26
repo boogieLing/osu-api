@@ -21,10 +21,3 @@ PROJECT_NAME = "osu-api"
 VERSION = "v1.0.0"
 DESCRIPTION = "Get some images and music!"
 
-COS_REGION = "ap-guangzhou"
-COS_SECRET_ID = "AKIDCCxgFYeuzo20jGXjiSxGSZtWt10lFRM1"
-COS_SECRET_KEY = "RedNr67ud9TZZLr7AzVnvnTv75wazA6r"
-COS_TOKEN = None
-COS_SCHEMA = "https"
-COS_OSU_BUCKET = "r0picgo-1308801249"
-COS_OSU_PATH = "/osu"
