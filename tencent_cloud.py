@@ -6,7 +6,7 @@ from qcloud_cos import CosS3Client
 from qcloud_cos.cos_threadpool import SimpleThreadPool
 
 from tc_config import COS_REGION, COS_SECRET_ID, COS_SECRET_KEY, COS_TOKEN, COS_SCHEMA, COS_OSU_BUCKET, COS_OSU_PATH
-from const import IMAGE_TYPE, OSU_DIR, OSU_IMG_DIR, OSU_CATEGORY_LIST
+from const import IMAGE_TYPE, OSU_DIR, OSU_IMG_DIR
 
 # pip install -U cos-python-sdk-v5
 
@@ -17,20 +17,19 @@ config = CosConfig(
 client = CosS3Client(config)
 
 
-def push_obj(category_key, cos_object_key, local_file):
+def push_obj(category_key, cos_object_key, local_file, single_save=False):
     if local_file.lower().endswith(IMAGE_TYPE):
         # https://cloud.tencent.com/document/product/436/55344
-        ans = client.ci_put_object_from_local_file(
-            COS_OSU_BUCKET, local_file, cos_object_key,
-            PicOperations=
-            f'{{"is_pic_info":1,"rules":[{{"fileid":"{cos_object_key}","rule":"imageMogr2/format/webp"}}]}}'
-        )  # 上传时压缩
+        if not single_save:
+            ans = client.ci_put_object_from_local_file(
+                COS_OSU_BUCKET, local_file, cos_object_key,
+                PicOperations=f'{{"is_pic_info":1,"rules":[{{"fileid":"{cos_object_key}","rule":"imageMogr2/format/webp"}}]}}'
+            )  # 上传时转为webp
         # 图片存两份，在主目录也需要一份
         ans = client.ci_put_object_from_local_file(
             COS_OSU_BUCKET, local_file, category_key,
-            PicOperations=
-            f'{{"is_pic_info":1,"rules":[{{"fileid":"{category_key}","rule":"imageMogr2/format/webp"}}]}}'
-        )  # 上传时压缩
+            PicOperations=f'{{"is_pic_info":1,"rules":[{{"fileid":"{category_key}","rule":"imageMogr2/format/webp"}}]}}'
+        )  # 上传时转为webp
         return ans
     else:
         # return client.upload_file(COS_OSU_BUCKET, cos_object_key, local_file)
@@ -38,15 +37,15 @@ def push_obj(category_key, cos_object_key, local_file):
         pass
 
 
-def tencent_cos_upload(category, upload_dir, beatMap_name):
+def tencent_cos_upload(root, category, upload_dir, beatMap_name, single_save=False):
     g = os.walk(upload_dir)
     # 创建上传的线程池
     pool = SimpleThreadPool()
     for path, dir_list, file_list in g:
         for file_name in file_list:
-            src_key = os.path.join(path, file_name)
-            cos_object_key = f"/{COS_OSU_PATH}/{category}/{beatMap_name}/{file_name.strip('/')}"
-            category_key = f"/{COS_OSU_PATH}/{category}/imgs/{beatMap_name}#{file_name.strip('/')}"
+            local_src_path = os.path.join(path, file_name)
+            cos_object_key = f"/{root}/{category}/{beatMap_name}/{file_name.strip('/')}"
+            category_key = f"/{root}/{category}/imgs/{beatMap_name}{file_name.strip('/')}"  # 存放到某个分类下
             # 判断 COS 上文件是否存在
             exists = False
             try:
@@ -58,9 +57,9 @@ def tencent_cos_upload(category, upload_dir, beatMap_name):
                 else:
                     logger.error("Error happened, reupload it.")
             if not exists:
-                logger.info(f"File {src_key} not exists in cos, upload it")
-                # push_obj(cos_object_key, src_key)
-                pool.add_task(push_obj, category_key, cos_object_key, src_key)
+                logger.info(f"File {local_src_path} not exists in cos, upload it")
+                # push_obj(cos_object_key, local_src_path)
+                pool.add_task(push_obj, category_key, cos_object_key, local_src_path, single_save)
 
     pool.wait_completion()
     result = pool.get_result()
@@ -110,4 +109,6 @@ def tencent_cos_osu_list() -> list:
 
 
 if __name__ == '__main__':
-    tencent_cos_osu_list()
+    tencent_cos_upload(
+        COS_OSU_PATH, "Aisaka Taiga", "E:\code\PycharmProjects\osu-api\download\Aisaka Taiga\imgs", "", True
+    )

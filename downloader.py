@@ -14,6 +14,7 @@ from InquirerPy import prompt
 from loguru import logger
 
 from const import IMAGE_TYPE, MUSIC_TYPE, PROJECT_PATH
+from tc_config import COS_OSU_PATH
 from tencent_cloud import tencent_cos_upload
 
 DOWNLOAD_PATH = os.curdir
@@ -131,7 +132,7 @@ def write_beatmapset_file(category, filename, data):
     if not total_imags_dir_exists:  # 判断是否存在文件夹如果不存在则创建为文件夹
         os.makedirs(total_imags_dir)
     unzip_beatmapset_file(total_imags_dir, file_path, target_dir, filename)
-    tencent_cos_upload(category, target_dir, filename)
+    tencent_cos_upload(COS_OSU_PATH, category, target_dir, filename)
 
 
 def unzip_beatmapset_file(total_imags_dir, origin_file, target_dir, map_name):
@@ -260,13 +261,13 @@ class Downloader:
                 data["beatmapsets"] = data["beatmapsets"][0:self.limit]
             # 构造 beatmap, 关键是id
             self.beatmapsets.update(
-               (BeatMapSet(bmset) for bmset in data["beatmapsets"])
+                (BeatMapSet(bmset) for bmset in data["beatmapsets"])
             )
             fav_count = data["beatmapsets"][-1]["favourite_count"]
             cur_id = data["beatmapsets"][-1]["id"]
             cursor_string_json = json.dumps({"favourite_count": fav_count, "id": cur_id})
             # cursor_string = base64.b64encode(cursor_string_json.encode())
-            cursor_string =  data["cursor_string"]
+            cursor_string = data["cursor_string"]
             num_beatmapsets = len(self.beatmapsets)
         logger.success(f"Scraped {num_beatmapsets} beatmapsets")
 
