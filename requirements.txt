@@ -44,3 +44,5 @@ starlette
 loguru
 pytest-shutil
 cos-python-sdk-v5
+Pillow
+pytz

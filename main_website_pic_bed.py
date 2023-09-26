@@ -6,6 +6,8 @@ from tc_config import COS_MAIN_WEBSITE_PIC_BED_PATH, COS_REGION, COS_SECRET_ID, 
 from qcloud_cos import CosConfig, CosServiceError
 from qcloud_cos import CosS3Client
 from qcloud_cos.cos_threadpool import SimpleThreadPool
+from datetime import datetime
+import pytz
 
 from loguru import logger
 
@@ -27,6 +29,7 @@ def categorize_images(directory):
     # 遍历目录及其子目录
     for root, dirs, files in os.walk(directory):
         # 遍历当前目录下的所有文件
+        # 按创建时间逆序排序
         for file in sorted(files, key=lambda x: get_modification_time(os.path.join(root, x)), reverse=True):
             if "primitive" not in root:
                 continue
@@ -92,7 +95,9 @@ def upload_to_cos_bed(directory):
                 new_height = int(height * new_width / width)
                 resized_img = img_obj.resize((new_width, new_height))
                 resized_img.save(compressed_path, optimize=True, quality=50)
-            cos_page_index = index // 4
+            # cos_page_index = index // 4
+            cos_page_index = index
+            cos_page_index = f'{cos_page_index:08d}'  # 补零保证1e8以内的顺序
             # 存储到cos
             cos_object_key_primitive = f"/{COS_MAIN_WEBSITE_PIC_BED_PATH}/{category}/primitive/{cos_page_index};{image_name_with_format}"
             cos_object_key_compressed = f"/{COS_MAIN_WEBSITE_PIC_BED_PATH}/{category}/compressed/{cos_page_index};{image_name_with_format}"
@@ -107,15 +112,29 @@ def upload_to_cos_bed(directory):
             logger.success(f"{category} upload sucessed.")
 
 
-def tencent_cos_main_website_pic_bed_list(prefix) -> list:
-    response = client.list_objects(
-        Bucket=COS_OSU_BUCKET,
-        Prefix=prefix,
-        Delimiter='/',
-        MaxKeys=100,
-    )
-    category_list = list()
-    print(response)
+def tencent_cos_main_website_pic_bed_list(prefix, maker, max_keys=30) -> list:
+    if maker is not None:
+        response = client.list_objects(
+            Bucket=COS_OSU_BUCKET,
+            Prefix=prefix,
+            Delimiter='/',
+            MaxKeys=max_keys,
+            Marker=maker
+        )
+    else:
+        response = client.list_objects(
+            Bucket=COS_OSU_BUCKET,
+            Prefix=prefix,
+            Delimiter='/',
+            MaxKeys=max_keys
+        )
+    return response
+
+
+def get_main_website_pic_bed_categories(maker=None, max_keys=1000):
+    prefix = f"{COS_MAIN_WEBSITE_PIC_BED_PATH}/"
+    response = tencent_cos_main_website_pic_bed_list(prefix, maker, max_keys)
+    category_list = []
     # 打印子目录
     if 'CommonPrefixes' in response:
         for folder in response['CommonPrefixes']:
@@ -123,13 +142,46 @@ def tencent_cos_main_website_pic_bed_list(prefix) -> list:
     return category_list
 
 
-def get_main_website_pic_bed_categories():
-    return tencent_cos_main_website_pic_bed_list("main_website_pic_bed/")
+def get_pic_bed_by_category(category, maker=None, max_keys=4):
+    prefix = f"{COS_MAIN_WEBSITE_PIC_BED_PATH}/{category}/compressed/"
+    response = tencent_cos_main_website_pic_bed_list(prefix, maker, max_keys)
+    pic_list = []
+    if "Contents" in response:
+        for content in response["Contents"]:
+            key = content["Key"]
+            last_modified_time = content["LastModified"]
+            last_semicolon_index = key.rfind(";")  # 查找最后一个分号的索引
+            pic_name = key[last_semicolon_index + 1:]  # 从最后一个分号的下一个位置
+            # 创建datetime对象
+            dt = datetime.strptime(last_modified_time, "%Y-%m-%dT%H:%M:%S.%fZ")
+            # 设置原始时间的时区为UTC
+            dt = dt.replace(tzinfo=pytz.UTC)
+            # 转换时区为中国上海
+            shanghai_tz = pytz.timezone("Asia/Shanghai")
+            shanghai_time = dt.astimezone(shanghai_tz)
+            pic_list.append({
+                "name": pic_name,
+                "url": f"https://r0picgo-1308801249.cos.ap-guangzhou.myqcloud.com/{key}",
+                "last_modified": shanghai_time.strftime("%Y-%m-%d %H:%M:%S")
+            })
+    marker = None
+    if response["IsTruncated"] != "false":
+        marker = response["NextMarker"]
+    return {
+        "marker": marker,
+        "data": pic_list
+    }
 
 
 if __name__ == '__main__':
     # 主站的图床管理工具
-    upload_to_cos_bed("E:\坚果云\图片\网站图床")
-    print(tencent_cos_main_website_pic_bed_list("main_website_pic_bed/"))
-    print(tencent_cos_main_website_pic_bed_list("main_website_pic_bed/lolm/primitive/"))
+    # upload_to_cos_bed("C:\\Users\\hanyuanling\\Nutstore\\1\\图片\\网站图床")
+    print(get_main_website_pic_bed_categories())
+    res = get_pic_bed_by_category("测试")
+    print(res)
+    res = get_pic_bed_by_category("测试", maker=res["marker"])
+    print(res)
+    res = get_pic_bed_by_category("测试", maker=res["marker"])
+    print(res)
+    # print(tencent_cos_main_website_pic_bed_list(f"{COS_MAIN_WEBSITE_PIC_BED_PATH}/测试/primitive/", maker=None))
     # pass

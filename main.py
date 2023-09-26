@@ -9,6 +9,7 @@ from fastapi.responses import StreamingResponse
 from const import DOWNLOAD_RES_PATH, PROJECT_NAME, DESCRIPTION, VERSION, DEBUG, LOG_DIR
 from constom_log import InterceptHandler, format_record
 from get import osu_pic
+from main_website_pic_bed import get_main_website_pic_bed_categories
 from utils import show_folder_files, show_beatmap
 import logging
 from loguru import logger
@@ -78,6 +79,22 @@ async def beatmap_list():
 @app.get("/beatmap/{name}")
 async def beatmap(name: str):
     return show_beatmap(name)
+
+
+@app.get("/main_website_pic/category/total")
+async def main_website_pic_bed_categories():
+    categories = get_main_website_pic_bed_categories()
+    return {
+        "data": categories
+    }
+
+
+@app.post("/main_website_pic/category/list")
+async def get_main_website_pic_bed_by_category(name: str):
+    categories = get_main_website_pic_bed_categories()
+    return {
+        "data": categories
+    }
 
 
 @app.get("/image/{folder}/{image_name}", deprecated=True)
