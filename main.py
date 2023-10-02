@@ -4,12 +4,12 @@ import sys
 from typing import Dict, Tuple
 
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, Body
 from fastapi.responses import StreamingResponse
 from const import DOWNLOAD_RES_PATH, PROJECT_NAME, DESCRIPTION, VERSION, DEBUG, LOG_DIR
 from constom_log import InterceptHandler, format_record
 from get import osu_pic
-from main_website_pic_bed import get_main_website_pic_bed_categories
+from main_website_pic_bed import get_main_website_pic_bed_categories, get_pic_bed_by_category
 from utils import show_folder_files, show_beatmap
 import logging
 from loguru import logger
@@ -90,10 +90,15 @@ async def main_website_pic_bed_categories():
 
 
 @app.post("/main_website_pic/category/list")
-async def get_main_website_pic_bed_by_category(name: str):
-    categories = get_main_website_pic_bed_categories()
+async def get_main_website_pic_bed_by_category(
+        category: str = Body(..., title='分类名', embed=True),
+        marker: str = Body(None, title='marker'),
+        size: int = Body(30, title='数量')
+):
+    print(marker, size)
+    res = get_pic_bed_by_category(category, marker, size)
     return {
-        "data": categories
+        "data": res
     }
 
 

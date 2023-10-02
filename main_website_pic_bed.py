@@ -142,16 +142,17 @@ def get_main_website_pic_bed_categories(maker=None, max_keys=1000):
     return category_list
 
 
-def get_pic_bed_by_category(category, maker=None, max_keys=4):
+def get_pic_bed_by_category(category, input_marker=None, max_keys=4):
     prefix = f"{COS_MAIN_WEBSITE_PIC_BED_PATH}/{category}/compressed/"
-    response = tencent_cos_main_website_pic_bed_list(prefix, maker, max_keys)
+    response = tencent_cos_main_website_pic_bed_list(prefix, input_marker, max_keys)
     pic_list = []
     if "Contents" in response:
         for content in response["Contents"]:
             key = content["Key"]
             last_modified_time = content["LastModified"]
             last_semicolon_index = key.rfind(";")  # 查找最后一个分号的索引
-            pic_name = key[last_semicolon_index + 1:]  # 从最后一个分号的下一个位置
+            last_period_index = key.rfind(".")  # 查找最后一个句号的索引
+            pic_name = key[last_semicolon_index + 1:last_period_index]  # 从最后一个分号的下一个位置
             # 创建datetime对象
             dt = datetime.strptime(last_modified_time, "%Y-%m-%dT%H:%M:%S.%fZ")
             # 设置原始时间的时区为UTC
@@ -179,9 +180,9 @@ if __name__ == '__main__':
     print(get_main_website_pic_bed_categories())
     res = get_pic_bed_by_category("测试")
     print(res)
-    res = get_pic_bed_by_category("测试", maker=res["marker"])
+    res = get_pic_bed_by_category("测试", input_marker=res["marker"])
     print(res)
-    res = get_pic_bed_by_category("测试", maker=res["marker"])
+    res = get_pic_bed_by_category("测试", input_marker=res["marker"])
     print(res)
     # print(tencent_cos_main_website_pic_bed_list(f"{COS_MAIN_WEBSITE_PIC_BED_PATH}/测试/primitive/", maker=None))
     # pass
