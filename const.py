@@ -8,7 +8,7 @@ import time
 
 DOWNLOAD_RES_PATH = "download"
 PROJECT_PATH = os.curdir
-IMAGE_TYPE = (".jpg", ".png", ".bmp")
+IMAGE_TYPE = (".jpg", ".png", ".bmp", ".gif")
 MUSIC_TYPE = (".wav", ".mp3", ".flac", ".ape", ".wv")
 # -----------------------系统调试------------------------------------
 DEBUG = True

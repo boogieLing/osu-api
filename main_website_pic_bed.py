@@ -19,7 +19,16 @@ client = CosS3Client(config)
 
 
 def get_modification_time(filepath):
-    return os.path.getmtime(filepath)
+    return os.path.getctime(filepath)
+
+
+def get_file_last_modified_time(file_path):
+    if os.path.exists(file_path):
+        timestamp = os.path.getctime(file_path)
+        last_modified_time = datetime.fromtimestamp(timestamp)
+        return last_modified_time.strftime('%Y-%m-%d %H:%M:%S')
+    else:
+        return "None"
 
 
 # 遍历文件夹并分类
@@ -30,7 +39,7 @@ def categorize_images(directory):
     for root, dirs, files in os.walk(directory):
         # 遍历当前目录下的所有文件
         # 按创建时间逆序排序
-        for file in sorted(files, key=lambda x: get_modification_time(os.path.join(root, x)), reverse=True):
+        for file in sorted(files, key=lambda x: get_modification_time(os.path.join(root, x)), reverse=False):
             if "primitive" not in root:
                 continue
             # 检查文件扩展名是否为图片格式
@@ -70,6 +79,21 @@ def push_obj(cos_object_key, local_file):
         pass
 
 
+def decimal_to_26_base(n):
+    if n == 0:
+        return 'a'
+
+    base = 26
+    result = ''
+
+    while n > 0:
+        remainder = (n - 1) % base
+        result = chr(ord('a') + remainder) + result
+        n = (n - 1) // base
+
+    return result
+
+
 def upload_to_cos_bed(directory):
     image_dict = categorize_images(directory)
     # print(image_dict)
@@ -88,26 +112,31 @@ def upload_to_cos_bed(directory):
             # 创建输出目录（如果不存在）
             os.makedirs(output_directory, exist_ok=True)
             compressed_path = os.path.join(output_directory, image_name_with_format)
-            if not os.path.exists(compressed_path):  # 缩小并压缩图片并保存到输出目录
+            if not os.path.exists(compressed_path) and ".gif" not in image_path:  # 缩小并压缩图片并保存到输出目录
                 image_size = os.stat(image_path).st_size  # 获取图片大小
                 width, height = img_obj.size  # 调整图片尺寸
                 new_width = 512
                 new_height = int(height * new_width / width)
                 resized_img = img_obj.resize((new_width, new_height))
                 resized_img.save(compressed_path, optimize=True, quality=50)
+            if not os.path.exists(compressed_path) and ".gif" in image_path:
+                img_obj.save(compressed_path, optimize=True, quality=50)
+
             # cos_page_index = index // 4
-            cos_page_index = index
-            cos_page_index = f'{cos_page_index:08d}'  # 补零保证1e8以内的顺序
+            cos_page_index = decimal_to_26_base(int(1e9 - index))
+            # cos_page_index = get_modification_time(image_path)
+            update_time = get_file_last_modified_time(image_path)
+            print(index, cos_page_index, update_time)
             # 存储到cos
-            cos_object_key_primitive = f"/{COS_MAIN_WEBSITE_PIC_BED_PATH}/{category}/primitive/{cos_page_index};{image_name_with_format}"
-            cos_object_key_compressed = f"/{COS_MAIN_WEBSITE_PIC_BED_PATH}/{category}/compressed/{cos_page_index};{image_name_with_format}"
+            cos_object_key_primitive = f"/{COS_MAIN_WEBSITE_PIC_BED_PATH}/{category}/primitive/{cos_page_index};{update_time};{image_name_with_format}"
+            cos_object_key_compressed = f"/{COS_MAIN_WEBSITE_PIC_BED_PATH}/{category}/compressed/{cos_page_index};{update_time};{image_name_with_format}"
             pool.add_task(push_obj, cos_object_key_primitive, image_path)
             pool.add_task(push_obj, cos_object_key_compressed, compressed_path)
             index += 1
         pool.wait_completion()
         result = pool.get_result()
         if not result['success_all']:
-            logger.error("Not all files upload sucessed. you should retry")
+            logger.error(f"Not all files upload sucessed. you should retry : {result}")
         else:
             logger.success(f"{category} upload sucessed.")
 
@@ -151,6 +180,8 @@ def get_pic_bed_by_category(category, input_marker=None, max_keys=4):
             key = content["Key"]
             last_modified_time = content["LastModified"]
             last_semicolon_index = key.rfind(";")  # 查找最后一个分号的索引
+            second_last_semicolon_index = key.rfind(";", 0, last_semicolon_index)  # 获取倒数第二个分号的索引
+            time_string = key[second_last_semicolon_index + 1:last_semicolon_index]  # 切片获取时间字符串
             last_period_index = key.rfind(".")  # 查找最后一个句号的索引
             pic_name = key[last_semicolon_index + 1:last_period_index]  # 从最后一个分号的下一个位置
             # 创建datetime对象
@@ -163,7 +194,7 @@ def get_pic_bed_by_category(category, input_marker=None, max_keys=4):
             pic_list.append({
                 "name": pic_name,
                 "url": f"https://r0picgo-1308801249.cos.ap-guangzhou.myqcloud.com/{key}",
-                "last_modified": shanghai_time.strftime("%Y-%m-%d %H:%M:%S")
+                "last_modified": time_string
             })
     marker = None
     if response["IsTruncated"] != "false":
@@ -176,13 +207,13 @@ def get_pic_bed_by_category(category, input_marker=None, max_keys=4):
 
 if __name__ == '__main__':
     # 主站的图床管理工具
-    # upload_to_cos_bed("C:\\Users\\hanyuanling\\Nutstore\\1\\图片\\网站图床")
-    print(get_main_website_pic_bed_categories())
-    res = get_pic_bed_by_category("测试")
-    print(res)
-    res = get_pic_bed_by_category("测试", input_marker=res["marker"])
-    print(res)
-    res = get_pic_bed_by_category("测试", input_marker=res["marker"])
-    print(res)
+    upload_to_cos_bed("E:\坚果云\图片\网站图床")
+    # print(get_main_website_pic_bed_categories())
+    # res = get_pic_bed_by_category("测试")
+    # print(res)
+    # res = get_pic_bed_by_category("测试", input_marker=res["marker"])
+    # print(res)
+    # res = get_pic_bed_by_category("测试", input_marker=res["marker"])
+    # print(res)
     # print(tencent_cos_main_website_pic_bed_list(f"{COS_MAIN_WEBSITE_PIC_BED_PATH}/测试/primitive/", maker=None))
     # pass
